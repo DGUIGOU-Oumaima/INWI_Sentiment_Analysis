@@ -61,6 +61,38 @@ PostgreSQL Database: Stores the processed data.
 Redis: Used for task queueing.
 Note: If port 8080 is unavailable, modify the docker-compose.yaml file to change the port configuration.
 
+### Optional: Working in a Virtual Environment
+If additional Python scripts are used for analysis or testing, activate the virtual environment:
+
+Create the virtual environment:
+```bash
+python3 -m venv VirEnv
+```
+Activate the virtual environment:
+On macOS/Linux:
+```bash
+source VirEnv/bin/activate
+```
+On Windows:
+```bash
+VirEnv\Scripts\activate
+```
+### Install the Required Packages
+Once the virtual environment is activated, install the project dependencies, including Airflow and PostgreSQL:
+
+```bash
+pip install -r requirements.txt
+```
+
+```bash
+cd dags
+```
+
+```bash
+py etl.py
+```
+
+
 ## Usage
 ### 1. Access the Airflow Web Interface
 Access Airflow at http://localhost:8080.
@@ -109,24 +141,5 @@ docker-compose stop
 ```
 
 
-Optional: Working in a Virtual Environment
-If additional Python scripts are used for analysis or testing, activate the virtual environment:
-
-On macOS/Linux:
-```bash
-source VirEnv/bin/activate
-```
-On Windows:
-```bash
-VirEnv\Scripts\activate
-```
-
-```bash
-cd dags
-```
-
-```bash
-py etl.py
-```
 
 
