@@ -14,6 +14,8 @@ This project demonstrates the creation of an ETL pipeline to perform sentiment a
 - **Transform**: Process and clean the comments for analysis.
 - **Load**: Store the results in a PostgreSQL database.
 - - **Analyze**: Perform sentiment analysis using Hugging Face models.
+![image](https://github.com/user-attachments/assets/c9855562-1d02-4416-8ee5-4d938e3872d2)
+
 
 
 The pipeline is managed and orchestrated using Apache Airflow, and the entire environment is containerized using Docker.
@@ -48,6 +50,7 @@ Start the services in detached mode:
 ```bash
 Copy code
 docker-compose up -d
+```
 
 This command starts the following services:
 
@@ -77,6 +80,7 @@ Export data from PostgreSQL to a CSV file:
 
 ```bash
 docker exec -it <postgres_container_name> psql -U <POSTGRES_USER> -d <POSTGRES_DB> -c "COPY (SELECT * FROM sentiment_analysis_results) TO STDOUT WITH CSV HEADER" > results.csv
+```
 Troubleshooting
 Port Conflict
 If port 8080 is in use:
@@ -88,6 +92,7 @@ If services fail to start:
 
 ```bash
 docker-compose logs
+```
 This command provides detailed error messages.
 
 Airflow Database Connection Errors
@@ -97,9 +102,11 @@ Stopping and Cleaning Up
 Stop and Remove Containers
 ```bash
 docker-compose down
+```
 Stop Services Without Removing Them
 ```bash
 docker-compose stop
+```
 
 
 Optional: Working in a Virtual Environment
@@ -108,14 +115,18 @@ If additional Python scripts are used for analysis or testing, activate the virt
 On macOS/Linux:
 ```bash
 source VirEnv/bin/activate
+```
 On Windows:
 ```bash
 VirEnv\Scripts\activate
+```
 
 ```bash
 cd dags
+```
 
 ```bash
 py etl.py
+```
 
 
