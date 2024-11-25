@@ -38,15 +38,15 @@ cd your-repo-name
 ### 2. Initialize the Airflow Environment
 Initialize the Airflow environment and create necessary database tables:
 
-bash
-Copy code
+```bash
 docker compose up airflow-init
 ### 3. Start the Services
 Start the services in detached mode:
 
-bash
+```bash
 Copy code
 docker-compose up -d
+
 This command starts the following services:
 
 Airflow Webserver: Accessible at http://localhost:8080.
@@ -73,8 +73,7 @@ Store the results in the PostgreSQL database.
 ### 3. Export Results
 Export data from PostgreSQL to a CSV file:
 
-bash
-Copy code
+```bash
 docker exec -it <postgres_container_name> psql -U <POSTGRES_USER> -d <POSTGRES_DB> -c "COPY (SELECT * FROM sentiment_analysis_results) TO STDOUT WITH CSV HEADER" > results.csv
 Troubleshooting
 Port Conflict
@@ -85,8 +84,7 @@ Update the docker-compose.yaml file to use another port.
 Service Initialization Issues
 If services fail to start:
 
-bash
-Copy code
+```bash
 docker-compose logs
 This command provides detailed error messages.
 
@@ -95,12 +93,10 @@ Ensure the sql_alchemy_conn parameter is correctly set in the airflow.cfg file.
 
 Stopping and Cleaning Up
 Stop and Remove Containers
-bash
-Copy code
+```bash
 docker-compose down
 Stop Services Without Removing Them
-bash
-Copy code
+```bash
 docker-compose stop
 
 
@@ -108,20 +104,16 @@ Optional: Working in a Virtual Environment
 If additional Python scripts are used for analysis or testing, activate the virtual environment:
 
 On macOS/Linux:
-bash
-Copy code
+```bash
 source VirEnv/bin/activate
 On Windows:
-bash
-Copy code
+```bash
 VirEnv\Scripts\activate
 
-bash
-Copy code
+```bash
 cd dags
 
-bash
-Copy code
+```bash
 py etl.py
 
 
