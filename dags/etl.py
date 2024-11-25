@@ -1,13 +1,13 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
-import pendulum
+import pendulum # pour gérer les dates en python
 import datetime
-import praw
-import psycopg2
+import praw  # Librairie pour interagir avec l'API de Reddit
+import psycopg2 # pour se connecter à PostgreSQL et insérer des données dans la base de données.
 from psycopg2.extras import Json
 import pandas as pd
-import re
+import re #Utilisé pour les expressions régulières (nettoyage des textes).
 from airflow.models import Variable
 
 # Paramètres de configuration
@@ -143,10 +143,10 @@ def insert_data_to_postgresql(ti, sector_name):
 
 # Définition du DAG unique pour plusieurs secteurs
 with DAG(
-    'etl_pipeline_multiple_sectors',
-    default_args={
-        'owner': 'airflow',
-        'depends_on_past': False,
+    'etl_pipeline_multiple_sectors',  #Nom du DAG
+    default_args={ # Arguments par défaut pour les tâches du DAG
+        'owner': 'airflow',  # Propriétaire de ce DAG
+        'depends_on_past': False, # Les tâches ne dépendent pas des exécutions passées
         'email_on_failure': False,
         'retries': 4,
         'start_date': pendulum.today('UTC').add(days=-2),
