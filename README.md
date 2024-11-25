@@ -5,8 +5,6 @@
 2. [Prerequisites](#prerequisites)
 3. [Setup and Installation](#setup-and-installation)
 4. [Usage](#usage)
-5. [Troubleshooting](#troubleshooting)
-6. [Stopping and Cleaning Up](#stopping-and-cleaning-up)
 
 ---
 
@@ -37,13 +35,13 @@ Clone the project repository to your local machine:
 git clone https://github.com/INWI_Sentiment_Analysis.git
 cd your-repo-name
 
-2. Initialize the Airflow Environment
+### 2. Initialize the Airflow Environment
 Initialize the Airflow environment and create necessary database tables:
 
 bash
 Copy code
 docker compose up airflow-init
-3. Start the Services
+### 3. Start the Services
 Start the services in detached mode:
 
 bash
@@ -58,21 +56,21 @@ PostgreSQL Database: Stores the processed data.
 Redis: Used for task queueing.
 Note: If port 8080 is unavailable, modify the docker-compose.yaml file to change the port configuration.
 
-Usage
-1. Access the Airflow Web Interface
+## Usage
+### 1. Access the Airflow Web Interface
 Access Airflow at http://localhost:8080.
 Use the default credentials:
 
 Username: airflow
 Password: airflow
-2. Activate the Sentiment Analysis Pipeline
+### 2. Activate the Sentiment Analysis Pipeline
 Enable the DAG in the Airflow interface.
 Trigger the DAG to:
 Extract comments from Reddit using the API.
 Clean and transform the comments.
 Perform sentiment analysis using Hugging Face models.
 Store the results in the PostgreSQL database.
-3. Export Results
+### 3. Export Results
 Export data from PostgreSQL to a CSV file:
 
 bash
@@ -104,8 +102,7 @@ Stop Services Without Removing Them
 bash
 Copy code
 docker-compose stop
-License
-This project is licensed under the MIT License.
+
 
 Optional: Working in a Virtual Environment
 If additional Python scripts are used for analysis or testing, activate the virtual environment:
