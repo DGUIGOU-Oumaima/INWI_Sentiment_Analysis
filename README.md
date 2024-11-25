@@ -33,15 +33,17 @@ Before starting, ensure you have the following:
 Clone the project repository to your local machine:
 ```bash
 git clone https://github.com/INWI_Sentiment_Analysis.git
-cd your-repo-name
-
+cd your-repo-name 
+```
 ### 2. Initialize the Airflow Environment
 Initialize the Airflow environment and create necessary database tables:
 
 ```bash
 docker compose up airflow-init
+```
 ### 3. Start the Services
 Start the services in detached mode:
+
 
 ```bash
 Copy code
