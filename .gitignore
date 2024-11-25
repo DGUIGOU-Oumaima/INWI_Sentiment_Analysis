@@ -1,0 +1,23 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore Python cache and compiled files
+__pycache__/
+*.py[cod]
+
+# Ignore model files
+models/
+*.h5
+*.pt
+*.ckpt
+
+
+# Ignore VS Code settings
+.vscode/
+
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.bak

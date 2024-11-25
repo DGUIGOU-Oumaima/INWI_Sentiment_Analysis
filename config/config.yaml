@@ -1,0 +1,12 @@
+twitter:
+    bearer_token2: "AAAAAAAAAAAAAAAAAAAAAErrwwEAAAAAmxYvyArH2t4WGGUaJKkmRR%2FBa6I%3DlzRF8hBuwGB5UEDyBopZdZLqIXKJbLMw6tLCuqsPjWKycvkjy8" 
+    bearer_token: "AAAAAAAAAAAAAAAAAAAAAPMhxAEAAAAA3EW7eEsdGOV5fBqrXZq63pTjlhI%3DJGszkEu5G11fb4wwvTVL5XnYwKtCQd33v4pOgrvURojK4oj8dF" 
+    bearer_tokenMed: "AAAAAAAAAAAAAAAAAAAAABU9xAEAAAAAS7eODEpIp1I078oh5YGYki7AeqM%3DJ0q6j884glSwmVhknhK8dzXAsZfOGGnfNJOWoUgKRuRaM24Lze"
+    Youtube_API_Key: "AIzaSyA8f7EVf47cwKG21Y6tWi2vaSemqovBvDE"
+database:
+  host: "postgrs"
+  user: "airflow"
+  password: "airflow"  # Simple alphanumeric password for testing
+  database_name: "airflow"
+  port: "5432"
+
