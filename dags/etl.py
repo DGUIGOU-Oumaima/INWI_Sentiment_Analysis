@@ -15,7 +15,7 @@ DB_HOST = "postgres"
 DB_PORT = "5432"
 
 # Liste des secteurs à traiter
-sectors = ["inwi", "InternetMaroc"]
+sectors = ["inwi", "morocco"]
 
 # Fonction d'extraction des données pour un secteur donné
 def fetch_posts_with_comments(ti, sector_name):
